@@ -22,9 +22,9 @@ Route::get('/', 'DameBlog@dametodo');
 Route::get('/formIndex', function () {
     return view('formIndex');
 });
-Route::get('/formIndex/registro_guardado', 'EscriboBlogController@guardarRegistro');
-Route::get('/formIndex/registro_actualizado', 'EscriboBlogController@actualizarRegistroAutor');
 
+
+Route::resource('/formIndex', 'CKEditorController');
 //guardamos informacion desde un form
 
 Route::post('/formIndex','EscriboBlogController@guardarRegistroForm')->name('save');
