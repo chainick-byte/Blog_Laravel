@@ -8,7 +8,7 @@ class DameBlog extends Controller
 {
     public function dameTodo(){
        // $blogs=Blog::all();
-       $blogs=Blog::paginate(3);
+       $blogs=Blog::orderBY('created_at','DESC')->paginate(5);
       // $blogs->withPath('custom/url');
         return view('index')->with(['blogs'=>$blogs]);
     }
